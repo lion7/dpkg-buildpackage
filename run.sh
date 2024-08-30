@@ -1,4 +1,3 @@
 #!/bin/bash
-
-cd /package/$PACKAGE_NAME
+cd /package/ || exit 1
 dpkg-buildpackage $@

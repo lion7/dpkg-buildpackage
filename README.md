@@ -7,17 +7,14 @@ This container allows you to mount your project and build it.
 
 ## Usage
 
-Inside the repo where the `package-version` folder is, run:
+Inside the repo where the `debian` folder is, run:
 
-`docker run -v $(pwd):/package -it -e PACKAGE_NAME=package-version smaj/dpkg-buildpackage`
+`docker run -v $(pwd):/package -it -e ghcr.io/lion7/dpkg-buildpackage`
 
-> Note the environment variable `PACKAGE_NAME` this must be set to the foldername
-containing the `debian` folder.
+By default, it runs with the following arguments:
 
-By default it runs with the following arguments:
-
-`-rfakeroot -us -uc`
+`-us -uc`
 
 You can override these defaults by adding them to the end of the command:
 
-`docker run -v $(pwd):/package -it -e PACKAGE_NAME=package-version smaj/dpkg-buildpackage -rfakeroot`
+`docker run -v $(pwd):/package -it ghcr.io/lion7/dpkg-buildpackage -rfakeroot`
